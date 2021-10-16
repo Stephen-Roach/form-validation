@@ -13,13 +13,13 @@ let failureIcon = classes('failure-icon');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  engine(username, 0, 'Username cannot be blank');
-  engine(email, 1, 'Email cannot be blank');
-  engine(password, 2, 'Password cannot be blank');
+  formValidation(username, 0, 'Username cannot be blank');
+  formValidation(email, 1, 'Email cannot be blank');
+  formValidation(password, 2, 'Password cannot be blank');
 });
 
 // this funciton will handle the form validation for us
-let engine = (id, serial, message) => {
+let formValidation = (id, serial, message) => {
   if (id.value.trim() === '') {
     //trim is used to remove the extra white space
     errorMsg[serial].innerHTML = message;
